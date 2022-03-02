@@ -1,8 +1,9 @@
 class ArtworksController < ApplicationController
     def index
-        # /artworks
-        artwork = Artwork.all
-        render :json => artwork
+        # users/:id/artworks
+        user = User.find(params[:user_id])
+        full_join_artworks = user.artworks + user.artwork_shares
+        render :json => full_join_artworks
     end
     def show
         # /artworks/:id
@@ -33,6 +34,7 @@ class ArtworksController < ApplicationController
         artwork.destroy
         render :json => artwork
     end
+    
 
     protected
 

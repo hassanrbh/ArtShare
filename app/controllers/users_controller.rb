@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     end
     def show
         # /users/:id        
-        user = User.find_by(:id => params[:id])
+        user = User.find_by(:id => params[:id]) 
         render :json => user
     end
     def create

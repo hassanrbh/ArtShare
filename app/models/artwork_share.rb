@@ -9,10 +9,11 @@
 #  updated_at :datetime         not null
 #
 class ArtworkShare < ApplicationRecord
-    validates :artwork_id, presence: true
-    validates :viewer_id, presence: true, uniqueness: {
-        scope: :artwork_id
+    validates :artwork_id, presence: true, uniqueness: {
+        scope: :viewer_id,
+        message: 'You cannot create An artwork for two users :)'
     }
+    validates :viewer_id, presence: true
 
     has_many :viewer,
         class_name: 'User',

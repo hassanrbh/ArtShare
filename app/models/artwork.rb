@@ -17,19 +17,29 @@ class Artwork < ApplicationRecord
     validates :image_url, presence: true
     validates :artist_id, presence: true
 
+    # ! The User Artwork
     belongs_to :artist,
         class_name: "User",
         primary_key: :id,
         foreign_key: :artist_id,
         dependent: :destroy
-    
+
+    # ! Artwork : For shared Artworks
     has_many :artwork_share,
         class_name: "ArtworkShare",
         primary_key: :id,
         foreign_key: :artwork_id,
         dependent: :destroy
 
+    # ! User : For the shared viewers
     has_many :shared_viewers,
         through: :artwork_share,
         source: :viewer
+
+    # ! Comment : For the Artwork Comments
+    has_many :comments,
+        class_name: 'Comment',
+        primary_key: :id,
+        foreign_key: :post_id,
+        dependent: :destroy
 end

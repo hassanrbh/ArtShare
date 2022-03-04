@@ -10,7 +10,8 @@
 #  updated_at :datetime         not null
 #
 class Comment < ApplicationRecord
-
+    validates :body, presence: true
+    
     # ! User : A Comment can belongs_to a user
     belongs_to :user,
         class_name: 'User',
@@ -25,4 +26,6 @@ class Comment < ApplicationRecord
         foreign_key: :post_id,
         dependent: :destroy
     
+    # ! Like : Polymorphic Association
+    has_many :likes, as: :imageable   
 end

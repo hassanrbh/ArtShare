@@ -42,4 +42,17 @@ class User < ApplicationRecord
         class_name: 'Like',
         primary_key: :id,
         foreign_key: :user_id
+
+    # * A polymorphic Association through likes and source is either one of comments or artwork
+
+    has_many :likes_comments,
+        through: :likes,
+        source: :likeable,
+        source_type: 'Comment'
+
+    has_many :likes_artworks,
+        through: :likes,
+        source: :likeable,
+        source_type: 'Artwork'
+      
 end

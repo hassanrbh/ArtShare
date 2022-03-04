@@ -42,4 +42,7 @@ class Artwork < ApplicationRecord
         primary_key: :id,
         foreign_key: :post_id,
         dependent: :destroy
+    
+    # ! Likes : Polymorphic Association
+    has_many :likes , as: :imageable
 end

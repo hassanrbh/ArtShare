@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :users, only: [:index,:create,:show,:update,:destroy]
 
-  resources :artworks, only: [:show,:create,:update,:destroy]
+  resources :artworks, only: [:show,:create,:update,:destroy] do 
+      member do 
+        get 'favorite'
+      end
+  end
 
   resources :artwork_shares, only: [:create, :destroy]
   

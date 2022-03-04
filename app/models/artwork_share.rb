@@ -7,6 +7,7 @@
 #  viewer_id  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  favorites  :boolean          default(FALSE)
 #
 class ArtworkShare < ApplicationRecord
     validates :artwork_id, presence: true, uniqueness: {

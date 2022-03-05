@@ -4,3 +4,4 @@ class AddNewColumnToArtwork < ActiveRecord::Migration[7.0]
     add_column :artwork_shares, :favorites, :boolean, :default => false
   end
 end
+ 

@@ -1,0 +1,11 @@
+
+                                     Music APP
+
+Authentications:
+  ☐ Migration for users table (email,password_digest,session_token)
+  ensure the validations are set in the database
+  ☐ add a password column and an attr_reader for checking the non encrypted length password
+
+
+
+  

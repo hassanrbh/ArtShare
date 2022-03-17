@@ -8,9 +8,9 @@ module ApplicationHelper
         auth.html_safe    
     end
     def sign_in
-        "<a href=\"#{signin_path}\">Sign in</a>".html_safe
+        "<a class=\"button\" href=\"#{signin_path}\">Sign in</a>".html_safe
     end
     def sign_up
-        "<a href=\"#{signup_path}\">Sign up</a>".html_safe
+        "<a class=\"button\" href=\"#{signup_path}\">Sign up</a>".html_safe
     end
 end

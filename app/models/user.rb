@@ -30,7 +30,7 @@ class User < ApplicationRecord
 
     # Setup methods to deal with session token
 
-    def self.generate_session_tokei
+    def self.generate_session_token
         SecureRandom.urlsafe_base64(16)
     end
 

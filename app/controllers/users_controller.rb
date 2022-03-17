@@ -6,9 +6,10 @@ class UsersController < ApplicationController
         # sign up a user and create a record in the db
         @new_user = User.new(users_params)
         if @new_user.save
+            log_in_user!(@new_user)
             redirect_to user_path(@new_user), notice: 'You have successfully registered'
         else
-            redirect_to :new_user_path, error: "Try Again later"
+            redirect_to :new_user, error: "Try Again later"
         end
     end
 

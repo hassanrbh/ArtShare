@@ -11,6 +11,19 @@
   </head>
 
   <body>
+    <% if current_user.nil? %>
+        <%= sign_in %>
+        <%= sign_up %>
+    <% else %>
+        <%= current_user.email %>
+        <form action="<%= session_path %>" method="post">
+            <%= auth_token %>
+            <input type="hidden"
+                      name="_method"
+                        value="delete">
+            <input type="submit" value="Delete" />
+        </form>
+    <% end %>
     <%= yield %>
   </body>
 </html>

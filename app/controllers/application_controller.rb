@@ -1,9 +1,8 @@
 class ApplicationController < ActionController::Base
     add_flash_types :error, :notice, :success
     helper_method :current_user
-
+    protect_from_forgery with: :exception
     def log_in_user!(user)
-        user.try(:reset_session_token!)
         @current_user = user
         session[:session_token] = user.session_token
     end
@@ -15,6 +14,7 @@ class ApplicationController < ActionController::Base
         current_user ? true : false
     end
     def logout!
+        current_user.try(:reset_session_token!)
         session[:session_token] = nil
     end
 end

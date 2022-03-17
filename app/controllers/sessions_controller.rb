@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
         end
     end
     def destroy
-        logout!
+        logout
         redirect_to new_session_path, :notice => "You have been logged out"
     end
 end

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    add_flash_types :error, :notice, :success
+    add_flash_types :error, :notice, :success, :delete
     helper_method :current_user
     protect_from_forgery with: :exception
     def log_in_user!(user)

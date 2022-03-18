@@ -1,0 +1,11 @@
+<h1 class="new_band">NEW BAND!</h1>
+<% if flash.key? :success %>
+    <p><%= flash[:success] %></p>
+<% end %>
+<form action="<%= bands_path %>" method="post">
+    <%= auth_token %>
+    <label for="bands_name"></label>
+    <input type="text" id="bands_name" name="bands[name]"/>
+    <br />
+    <input type="submit" value="Submit"/>
+</form>

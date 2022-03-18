@@ -1,0 +1,30 @@
+<h1 class="page-header"><%= @band.name %></h1>
+<br />
+
+<h4 class="albums">ALBUMS</h4>
+
+<ul class="page-links">
+    <li>
+        <a class="button" href="<%= edit_band_path(@band.id) %>">
+        Edit Band</a></li>
+    <li>
+        <a class="button" href="<%= band_path(@band.id) %>">
+        Destroy Band</a></li>
+    <li>
+        <a class="button" href="<%= bands_path %>">
+    All Bands</a></li>
+    <li>
+        <% if flash.key? :delete %>
+            <%= flash[:delete] %>
+        <% end %>
+        <form action="<%= band_path(@band.id) %>" method="POST">
+            <%= auth_token %>
+            <input type="hidden" name="_method" value="DELETE" />
+            <input type="submit" value="Destroy Band" />
+        </form>
+    </li>
+</ul>
+
+
+<p style="color:red">Do not forget to create a album table</p>
+

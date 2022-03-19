@@ -1,7 +1,7 @@
 <h1 class="page-header">EDIT <%= @band_edit.name%></h1>
 <br />
 
-<form action="<%= band_path %>" method="post">
+<form class="input_silver" action="<%= band_path %>" method="post">
     <%= auth_token %>
     <input type="hidden" name="_method" value="put"/>
     <br />

@@ -1,0 +1,31 @@
+<h1 class="page-header">NEW <%= @band.name.upcase %> ALBUM! </h1>
+
+<form class="form" action="<%= albums_path %>" method="post">
+    <%= auth_token %>
+    <br />
+
+    <label for="albums_name">Album Name: </label>
+    <input type="text" id="albums_name" name="albums[name]"/>
+    <br />
+    <br />
+    <label for="select_bands">Bands:  </label>
+    <select id="select_bands" class="select_controller">
+        <% Band.all.each do |band_album| %>
+            <option value="<%= band_album.name %>">
+            <%= band_album.name %></option>
+        <% end %>
+    </select>
+    <br />
+    <br />
+    <label for="album_live_t">Live</label>
+    <input type="radio" name="albums[live]" value="t" id="album_live_t" />
+    <label for="album_live_f">Studio</label>
+    <input type="radio" name="albums[live]" checked="checked" value="f" id="album_live_f" />
+    <br />
+    <br />
+    <label for="album_year">Year</label>
+    <input type="number" name="albums[year]" id="album_year">
+    <br />
+    <br />
+    <input type="submit" id="create_button" value="Create Album!">
+</form>

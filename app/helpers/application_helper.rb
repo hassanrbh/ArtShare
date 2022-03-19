@@ -13,4 +13,12 @@ module ApplicationHelper
     def sign_up
         "<a class=\"button\" href=\"#{signup_path}\">Sign up</a>".html_safe
     end
+    def albums_helper(albums_instance)
+        albums = "<li><a href=\"#{band_path(albums_instance.id)}\">"
+
+        albums += "<p>#{albums_instance.name}</p>"
+        albums += "</a>"
+        albums.html_safe
+    end
+
 end

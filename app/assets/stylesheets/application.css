@@ -24,6 +24,15 @@
      text-decoration: none;
      box-sizing: border-box;
      font-family: "Raleway", sans-serif;
+     background: inherit;
+ }
+ button {
+    background: none;
+	cursor: pointer;
+ }
+ a {
+    background: none;
+	color: inherit;
  }
  ul {
     list-style: none;
@@ -53,3 +62,101 @@
  .header-list form {
      padding-right: 10px;
  }
+ .wrapper {
+     padding-top: 50px;
+     display: flex;
+     justify-content: center;
+ }
+ .wrapper li {
+     padding: 10px;
+     background: darkkhaki;
+     border-radius: 25px;
+     list-style-type: none;
+ }
+ .wrapper a {
+     padding: 10px;
+ }
+ .wrapper input {
+     background: none;
+ }
+ .button_logout {
+     background-color: white;
+     border: none;
+     border-radius: 5px;
+     color: #333;
+     padding: 5px 18px;
+
+ }
+ .input_silver input[type="text"] {
+     background: darkkhaki;
+ }
+ input {
+     background: whitesmoke;
+ }
+ .page-header {
+     display: flex;
+     justify-content: center;
+     color: #335b99;
+     font-size: 40px;
+     font-weight: bolder;
+     box-shadow: 55px 3px 11px 11px rgba(223, 255, 0, 0.2);
+ }
+ .page-header-header {
+    display: flex;
+    justify-content: center;
+    color: #335b99;
+    font-size: 30px;
+    font-weight: bolder;
+    box-shadow: 55px 3px 11px 11px rgba(223, 255, 0, 0.2);
+    padding: 50px;
+ }
+ #select_bands {
+     color: green;
+     background: aliceblue;
+     border-radius: 5px;
+ }
+ #albums_name {
+     border-radius: 5px;
+ }
+ #select_bands:hover option {
+     color: red;
+ }
+ #album_live_f {
+     height: 15px;
+     width: 15px;
+     margin: .7rem;
+ }
+ #album_live_t {
+     margin: .7rem;
+ }
+ #create_button {
+     border-radius: 5px;
+     padding: 5px;
+ }
+ .form input[type="submit"] {
+     display: flex;
+     align-self: flex-end;
+ }
+ .list-album {
+     display: flex;
+     justify-content: center;
+     border-radius: 5px;
+     color: red;
+     font-weight: bolder;
+     font-size: 19px;
+ }
+ .no_albums {
+     color: red;
+     display: flex;
+     justify-content: center;
+     cursor: pointer;
+ }
+ .no_albums:hover  {
+     color:rgba(223, 255, 0, 0.2);
+     animation: no_albums_move 5s;
+ }
+ @keyframes no_albums_move {
+     from {top: 0px; color: darkgoldenrod;}
+     to {top: 200px; color: burlywood}
+ }
+

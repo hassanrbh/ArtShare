@@ -2,7 +2,7 @@
 <% if flash.key? :success %>
     <p><%= flash[:success] %></p>
 <% end %>
-<form action="<%= bands_path %>" method="post">
+<form class="input_silver" action="<%= bands_path %>" method="post">
     <%= auth_token %>
     <label for="bands_name"></label>
     <input type="text" id="bands_name" name="bands[name]"/>

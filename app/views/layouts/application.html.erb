@@ -21,14 +21,16 @@
             <%= sign_in %>
             <%= sign_up %>
           <% else %>
-            <p>Logged in as: <%= current_user.email %></p>
-            <form class="button" action="<%= session_path %>" method="post">
-              <%= auth_token %>
-              <input type="hidden"
-                        name="_method"
-                            value="delete">
-              <input type="submit" value="Sign Out"/>
-            </form>
+            <div class="header-list">
+              <p>Logged in as: <%= current_user.email %></p>
+              <form class="button_logout" action="<%= session_path %>" method="post">
+                <%= auth_token %>
+                <input type="hidden"
+                          name="_method"
+                              value="delete">
+                <input type="submit" value="Sign Out"/>
+              </form>
+            </div>
           <% end %>
         </ul>
       </nav> 

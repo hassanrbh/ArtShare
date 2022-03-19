@@ -1,27 +1,27 @@
 <h1 class="page-header"><%= @band.name %></h1>
 <br />
 
-<h4 class="albums">ALBUMS</h4>
+<h4 class="page-header-header">ALBUMS</h4>
 <ul class="main-list">
     <% if !@band.band_albums.empty? %>
         <% @band.band_albums.each do |band_album| %>
             <li class="list-active">
-                <a href="<%= album_path(band_album.id) %>">
+                <a class="list-album" href="<%= album_path(band_album.id) %>">
                     <p><%= band_album.name %></p>
                 </a>
             </li>
         <% end %>
     <% else %>
-        <p style="color: red">This band has no albums... yet!</p>
+        <p class="no_albums">This band has no albums... yet!</p>
     <% end %>
 </ul>
-<ul class="page-links">
+<ul class="wrapper">
+    <li>
+        <a class="button" href="<%= new_band_album_url(@band.id) %>">
+        New Album</a></li>
     <li>
         <a class="button" href="<%= edit_band_path(@band.id) %>">
         Edit Band</a></li>
-    <li>
-        <a class="button" href="<%= band_path(@band.id) %>">
-        Destroy Band</a></li>
     <li>
         <a class="button" href="<%= bands_path %>">
     All Bands</a></li>

@@ -1,8 +1,14 @@
 <% if flash[:notice] %>
-    <% flash[:notice].each do |error| %>
-          <li id="success-catching"><%= error %></li>
+    <% flash[:notice].each do |success| %>
+          <li id="success-catching"><%= success %></li>
     <% end %>
 <% end %>
+<% if flash[:success] %>
+    <% flash[:success].each do |success| %>
+          <li id="success-catching"><%= success %></li>
+    <% end %>
+<% end %>
+
 <h1 class="page-header">Bands</h1>
 <ul class="band-list">
     <% @bands.each do |band| %>

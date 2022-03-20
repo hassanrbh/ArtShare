@@ -24,3 +24,4 @@ class Track < ApplicationRecord
 
     belongs_to :album, :class_name => 'Album', :dependent => :destroy
 end
+

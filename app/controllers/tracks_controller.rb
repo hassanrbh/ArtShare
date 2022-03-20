@@ -1,4 +1,5 @@
 class TracksController < ApplicationController
+    before_action :require_login! 
     def show
         @track = Track.find_by(:id => params[:id])
         render :show
@@ -18,9 +19,19 @@ class TracksController < ApplicationController
         end
     end
     def edit
-
+        @track = Track.find_by(:id => params[:id])
+        render :edit
     end
     def update
+        @track = Track.find_by(:id => params[:id])
+
+        if @track.update(tracks_params)
+            flash[:success] = "Track updated successfully"
+            redirect_to track_path(@track.id)
+        else
+            flash[:errors] = @track.error.full_messages
+            redirect_to edit_track_path(@track.id)
+        end
     end
     def destroy
         @track = Track.find_by(:id => params[:id])

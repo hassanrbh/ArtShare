@@ -97,6 +97,8 @@
  }
  input {
      background: whitesmoke;
+     margin-top: 10px;
+     border-radius: 5px;
  }
  .page-header {
      display: flex;
@@ -115,9 +117,10 @@
     padding: 30px;
  }
  #select_bands {
-     color: green;
-     background: aliceblue;
-     border-radius: 5px;
+     color: salmon;
+     background: gold;
+     border-radius: 5mm;
+
  }
  #albums_name {
      border-radius: 5px;
@@ -126,12 +129,12 @@
      color: red;
  }
  #album_live_f {
-     height: 15px;
-     width: 15px;
      margin: .7rem;
+     background: gold;
  }
  #album_live_t {
      margin: .7rem;
+     background: gold;s
  }
  #create_button {
      border-radius: 5px;
@@ -166,10 +169,11 @@
  h4 {
      font-weight: bold;
      font-size: 20px;
-     color: aliceblue;
+     color: orange;
      display: flex;
      justify-content: center;
      padding-top: 10px;
+
  }
  .form {
      display: flex;
@@ -206,4 +210,12 @@
      color: orange;
      padding-top: 17px;
      font-size: large;
+ }
+ #tracks_title {
+     border-radius: 6px;
+     background: gold;
+ }
+ #ord_tracks {
+     border-radius: 6px;
+     background: gold;
  }

@@ -37,6 +37,9 @@
         </nav> 
       </header>
     </div>
+    <% if flash[:error] %>
+        <li id="error-catching"><%= flash[:error] %></li>
+    <% end %>
     <%= yield %>
   </body>
 </html>

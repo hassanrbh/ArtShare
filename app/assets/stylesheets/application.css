@@ -50,6 +50,7 @@
  }
 .header-list {
     display: flex;
+    padding-top: 5px;
  }
 .header-nav {
     display: flex;
@@ -61,6 +62,9 @@
  }
  .header-list form {
      padding-right: 10px;
+ }
+ .header-logo {
+     padding-right: 90px;
  }
  .wrapper {
      padding-top: 50px;
@@ -99,7 +103,7 @@
      color: #335b99;
      font-size: 40px;
      font-weight: bolder;
-     box-shadow: 55px 3px 11px 11px rgba(223, 255, 0, 0.2);
+     padding: 10px;
  }
  .page-header-header {
     display: flex;
@@ -107,8 +111,7 @@
     color: #335b99;
     font-size: 30px;
     font-weight: bolder;
-    box-shadow: 55px 3px 11px 11px rgba(223, 255, 0, 0.2);
-    padding: 50px;
+    padding: 30px;
  }
  #select_bands {
      color: green;
@@ -167,4 +170,23 @@
      justify-content: center;
      padding-top: 10px;
  }
-
+ .form {
+     display: flex;
+     flex-direction: column;
+     width: 400px;
+     font-size: 18px;
+     margin-top: 15px;
+ }
+ body {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+ #lyrics_track {
+    color: gold;
+    background: #2f2f2f;
+ }
+ #error-catching {
+     color: red;
+     list-style-type: none;
+ }

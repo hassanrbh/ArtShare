@@ -1,0 +1,41 @@
+<h1 class="page-header">NEW <%= @album.name.upcase %></h1>
+
+<form class="form" action="<%= tracks_path %>" method="POST">
+    <%= auth_token %>
+    <br />
+    <p>
+        <label for="albums_name">Title: </label>
+        <input type="text" id="tracks_title" name="tracks[title]"/>
+    </p>
+    <br />
+    <br />
+    <p>
+        <label for="select_bands">Albums: </label>
+        <select id="select_bands" name="tracks[album_id]" class="select_controller">
+            <% Album.all.each do |track_album| %>
+                <option value="<%= track_album.id %>">
+                <%= track_album.name %></option>
+            <% end %>
+        </select>
+    </p>
+    <br />
+    <br />
+    <p>
+        <label for="ord_tracks">Ord: </label>
+        <input type="number" id="ord_tracks" name="tracks[ord]" min="0" max="101"/>
+    </p>
+    <br />
+    <p>
+        <label for="album_live_t">Standard</label>
+        <input type="radio" id="album_live_t" name="tracks[track_type]" value="regular">
+        <label for="album_live_f">Bonus</label>
+        <input type="radio" id="album_live_f" name="tracks[track_type]" value="bonus">
+    </p>
+    <br />
+    <p>
+        <label for="lyrics_track">Lyrics: </label>
+        <textarea id="lyrics_track" name="tracks[lyrics]" rows="10" cols="40"></textarea>
+    </p>  
+    <br />
+    <input type="submit" class="create_button" value="Submit"/>
+</form>

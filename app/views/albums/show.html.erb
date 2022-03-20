@@ -1,10 +1,25 @@
 <h1 class="page-header"><%= @album.name %></h1>
 
-<h4 class="page-header-header">Tracks</h4>
-<p style="color: red;">Don't forget to add the logic of  Tracks</p>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <li id="error-catching"><%= error %></li>
+    <% end %>
+<% end %>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+<h4 class="page-header-header">Tracks</h4>
+<ul class="main-list">
+    <% if !@album.tracks.empty? %>
+        <% @album.tracks.each do |track| %>
+            <li class="list-active">
+                <a class="list-album" href="<%= track_path(track.id) %>">
+                <p><%= track.title %></p>
+                </a>
+            </li>
+        <% end %>
+    <% else %>
+        <p class="no_albums" >This album has no tracks... yet!</p>
+    <% end %>
+</ul>
 <h4>Links</h4>
 <% if flash.key? :update %>
     <% flash.each do |update| %>
@@ -13,7 +28,7 @@
 <% end%>
 <ul class="wrapper">
     <li>
-        <a class="button" href="#">New Track</a></li>
+        <a class="button" href="<%= new_album_track_url(@album.id) %>">New Track</a></li>
     <li>
         <a clas="button" href="<%= edit_album_path %>">Edit Album</a></li>
     <li>
@@ -25,7 +40,3 @@
     <li>
         <a class="button" href="<%= band_path(@album.band.id) %>">Back to <%= @album.band.name %></a></li>
 </ul>
-=======
->>>>>>> c834e25 (fixe some changes in the show and new actions)
-=======
->>>>>>> hassantarif

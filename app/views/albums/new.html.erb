@@ -8,7 +8,11 @@
     <input type="text" id="albums_name" name="albums[name]"/>
     <br />
     <br />
+<<<<<<< HEAD
     <input type="hidden" name="albums[band_id]" value="<%= @band.id %>"/>
+=======
+    <input type="hidden" name="albums[band_id]" value="<%= @band.id %>">
+>>>>>>> c834e25 (fixe some changes in the show and new actions)
     <label for="select_bands">Bands:  </label>
     <select id="select_bands" class="select_controller">
         <% Band.all.each do |band_album| %>

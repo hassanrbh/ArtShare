@@ -11,10 +11,15 @@ Rails.application.routes.draw do
 
   resource :session, :only => [:new,:create,:destroy]
   resources :users, :only => [:new,:create,:show]
-  # albums table
-  resources :albums
+  # albums and bands table
   resources :bands do
     resources :albums, :only => :new
+  end
+
+  # Tracks Table
+  resources :tracks
+  resources :albums do
+    resources :tracks, only: :new
   end
 
 end

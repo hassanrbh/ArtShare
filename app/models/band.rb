@@ -13,7 +13,8 @@ class Band < ApplicationRecord
     has_many :albums,
         class_name: 'Album',
         primary_key: :id,
-        foreign_key: :band_id
+        foreign_key: :band_id,
+        dependent: :destroy
 
     def band_albums
         self.albums

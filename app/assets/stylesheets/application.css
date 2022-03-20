@@ -97,8 +97,15 @@
  }
  input {
      background: whitesmoke;
-     margin-top: 10px;
      border-radius: 5px;
+ }
+ #email {
+    border-radius: 5px;
+    margin-top: 10px;
+ }
+ #password {
+     border-radius: 5px;
+     margin-top: 10px
  }
  .page-header {
      display: flex;

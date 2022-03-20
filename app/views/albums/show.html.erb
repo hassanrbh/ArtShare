@@ -3,24 +3,3 @@
 <h4 class="tracks">Tracks</h4>
 <p style="color: red;">Don't forget to add Tracks</p>
 
-<ul class="page-links">
-    <li>
-        <a class="button" href="<%= edit_band_path(@band.id) %>">
-        New Track</a></li>
-    <li>
-        <a class="button" href="<%= band_path(@band.id) %>">
-        Destroy Band</a></li>
-    <li>
-        <a class="button" href="<%= bands_path %>">
-    All Bands</a></li>
-    <li>
-        <% if flash.key? :delete %>
-            <%= flash[:delete] %>
-        <% end %>
-        <form action="<%= band_path(@band.id) %>" method="POST">
-            <%= auth_token %>
-            <input type="hidden" name="_method" value="DELETE" />
-            <input type="submit" value="Destroy Band" />
-        </form>
-    </li>
-</ul>

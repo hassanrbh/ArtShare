@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resource :session, :only => [:new,:create,:destroy]
   resources :users, :only => [:new,:create,:show]
   # albums table
-  resources :albums, :except => [:new, :index]
+  resources :albums
   resources :bands do
     resources :albums, :only => :new
   end

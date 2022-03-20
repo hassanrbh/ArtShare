@@ -1,0 +1,54 @@
+<h1 class="page-header">Edit <%= @album.name.upcase %></h1>
+
+<% if flash.key? :error %>
+    <% flash.each do |error| %>
+        <%= error %>
+    <% end%>
+<% end%>
+<form class="form" action="<%= album_path(@album.id) %>" method="post">
+    <%= auth_token %>
+    <input type="hidden" name="_method" value="patch">
+    <br />
+
+    <label for="albums_name">Album Name: </label>
+    <input type="text"
+           id="albums_name"
+           name="albums[name]"
+           value="<%= @album.name %>"/>
+    <br />
+    <br />
+    <label for="select_bands">Bands:  </label>
+    <select id="select_bands" class="select_controller">
+        <% Band.all.each do |band_album| %>
+            <option 
+                    <%= "selected" if @album.band_id == band_album.id%>
+                    value="<%= band_album.name %>">
+            <%= band_album.name %></option>
+        <% end %>
+    </select>
+    <br />
+    <br />
+    <label for="album_live_t">Live</label>
+    <input type="radio"
+           name="albums[live]"
+           value="t"
+           id="album_live_t"
+           <%= "checked" if @album.live %>/>
+
+    <label for="album_live_f">Studio</label>
+    <input type="radio"
+           name="albums[live]"
+           value="f"
+           id="album_live_f"
+           <%= "checked" if !@album.live %>/>
+    <br />
+    <br />
+    <label for="album_year">Year</label>
+    <input type="number"
+           name="albums[year]"
+           id="album_year"
+           value="<%= @album.year %>"/>
+    <br />
+    <br />
+    <input type="submit" id="create_button" value="Edit Album!">
+</form>

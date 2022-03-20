@@ -1,2 +1,25 @@
 <h1 class="page-header"><%= @album.name %></h1>
 
+<h4 class="page-header-header">Tracks</h4>
+<p style="color: red;">Don't forget to add the logic of  Tracks</p>
+
+<h4>Links</h4>
+<% if flash.key? :update %>
+    <% flash.each do |update| %>
+        <%= update %>
+    <% end%>
+<% end%>
+<ul class="wrapper">
+    <li>
+        <a class="button" href="#">New Track</a></li>
+    <li>
+        <a clas="button" href="<%= edit_album_path %>">Edit Album</a></li>
+    <li>
+        <% if flash.key? :delete %>
+            <%= flash[:delete] %>
+        <% end%>
+        <%= button_to "Delete Me", album_path(@album.id), :method => :delete %>
+    </li>
+    <li>
+        <a class="button" href="<%= band_path(@album.band.id) %>">Back to <%= @album.band.name %></a></li>
+</ul>

@@ -38,7 +38,9 @@
       </header>
     </div>
     <% if flash[:error] %>
-        <li id="error-catching"><%= flash[:error] %></li>
+      <% flash[:error].each do |error| %>
+          <li id="error-catching"><%= error %></li>
+      <% end %>
     <% end %>
     <%= yield %>
   </body>

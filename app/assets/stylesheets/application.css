@@ -226,3 +226,7 @@
      border-radius: 6px;
      background: gold;
  }
+ #success-catching {
+    color: green;
+    list-style-type: none;
+ }

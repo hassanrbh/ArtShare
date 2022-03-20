@@ -1,3 +1,8 @@
+<% if flash[:notice] %>
+    <% flash[:notice].each do |error| %>
+          <li id="success-catching"><%= error %></li>
+    <% end %>
+<% end %>
 <h1 class="page-header">Bands</h1>
 <ul class="band-list">
     <% @bands.each do |band| %>

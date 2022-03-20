@@ -1,1 +1,29 @@
-<h1><%= @track.title %></h1>
+<h1 class="track_title"><%= @track.title.upcase %></h1>
+
+<p>
+    <p id="lyrics" <span>🎵</span> <%= @track.lyrics %></p>
+</p>
+
+<h3 id="header-note">NEW NOTE</h3>
+
+<p style="padding-top: 20px; color: red;">⛑ Don't forget to add The new note table</p>
+
+<h3 id="header-note">NOTES</h3>
+
+<p style="padding-top: 20px; color: red;">⛑ Don't forget to add All the notes</p>
+
+<h3 id="header-note">LINKS</h3>
+
+<ul class="wrapper">
+    <li>
+        <a class="button" href="<%= edit_track_path(@track.id)  %>">Edit Track</a></li>
+    <li>
+        <form action="<%= track_path(@track.id) %>" method="POST">
+            <%= auth_token %>
+            <input type="hidden" name="_method" value="delete"/>
+            <input type="submit" value="Destroy Track">
+        </form>  
+    </li>
+    <li>
+        <a class="button" href="<%= album_path(@track.album.id) %>"><%= @track.album.name %></a></li>
+</ul>

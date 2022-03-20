@@ -1,6 +1,4 @@
 class TracksController < ApplicationController
-    def index
-    end
     def show
         @track = Track.find_by(:id => params[:id])
         render :show
@@ -18,6 +16,16 @@ class TracksController < ApplicationController
             flash[:errors] = @track.errors.full_messages
             redirect_to album_path(@track.album.id)
         end
+    end
+    def edit
+
+    end
+    def update
+    end
+    def destroy
+        @track = Track.find_by(:id => params[:id])
+        @track.destroy
+        redirect_to album_path(@track.album.id)
     end
 
     private

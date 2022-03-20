@@ -23,7 +23,7 @@
      vertical-align: baseline;
      text-decoration: none;
      box-sizing: border-box;
-     font-family: "Raleway", sans-serif;
+     font-family: "Bungee Inline", cursive;
      background: inherit;
  }
  button {
@@ -76,6 +76,7 @@
      background: darkkhaki;
      border-radius: 25px;
      list-style-type: none;
+     margin-left: 10px;
  }
  .wrapper a {
      padding: 10px;
@@ -189,4 +190,20 @@
  #error-catching {
      color: red;
      list-style-type: none;
+ }
+ .track_title {
+     padding-top: 10px;
+     font-size: 30px;
+     color: gold;
+ }
+ #lyrics {
+     padding-top: 30px;
+ }
+ #create_butt {
+     padding-right: 4px;
+ }
+ #header-note {
+     color: orange;
+     padding-top: 17px;
+     font-size: large;
  }

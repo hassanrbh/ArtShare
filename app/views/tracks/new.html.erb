@@ -12,8 +12,10 @@
     <p>
         <label for="select_bands">Albums: </label>
         <select id="select_bands" name="tracks[album_id]" class="select_controller">
+            <option value="" disabled >-- 🤖 Choose an album ☠️ --</option>
             <% Album.all.each do |track_album| %>
-                <option value="<%= track_album.id %>">
+                <option value="<%= track_album.id %>"
+                <%=  "selected" if track_album.id == @album.id %>>
                 <%= track_album.name %></option>
             <% end %>
         </select>

@@ -14,6 +14,7 @@
 class Track < ApplicationRecord
     TRACK_TYPES = %w(regular bonus) 
 
+    validates :lyrics, presence: true
     validates :album_id, presence: true
     validates :title, presence: true
     validates :ord, presence: true
@@ -24,5 +25,12 @@ class Track < ApplicationRecord
 
     belongs_to :album, :class_name => 'Album', :dependent => :destroy
     has_many :notes, :class_name => 'Note'
+
+    def get_breaker_lyrics
+        break_lyrics = self.lyrics.split("\n")
+        break_lyrics.each do |string_lyric|
+            string_lyric
+        end
+    end
 end
 

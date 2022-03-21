@@ -1,7 +1,7 @@
 <h1 class="track_title"><%= @track.title.upcase %></h1>
 
 <p>
-    <p id="lyrics" <span>🎵</span> <%= @track.lyrics %></p>
+<%= ugly_lyrics(@track.lyrics) %>
 </p>
 
 <h3 id="header-note">NEW NOTE</h3>

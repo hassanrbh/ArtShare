@@ -67,7 +67,6 @@
      padding-right: 90px;
  }
  .wrapper {
-     padding-top: 50px;
      display: flex;
      justify-content: center;
  }
@@ -204,6 +203,7 @@
  }
  .track_title {
      padding-top: 10px;
+     padding-bottom: 10px;
      font-size: 30px;
      color: gold;
  }
@@ -215,8 +215,9 @@
  }
  #header-note {
      color: orange;
-     padding-top: 17px;
+     padding-top: 20px;
      font-size: large;
+
  }
  #tracks_title {
      border-radius: 6px;
@@ -241,7 +242,7 @@
     margin: 10px;
  }
  .note-item-info {
-     padding: 1cm;
+     padding: 0.5cm;
      padding-top: 2px;
      margin: 10px;
      font-size: 14px;

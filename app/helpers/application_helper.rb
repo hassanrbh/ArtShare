@@ -20,5 +20,11 @@ module ApplicationHelper
         albums += "</a>"
         albums.html_safe
     end
-
+    def ugly_lyrics(lyrics)
+        parser_string = ""
+        lyrics.lines.each do |line|
+            parser_string << "&#9835; #{html_escape(line)}"
+        end
+        "<pre class='lyrics'>#{parser_string}</pre>".html_safe
+    end
 end

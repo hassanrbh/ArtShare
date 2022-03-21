@@ -230,3 +230,45 @@
     color: green;
     list-style-type: none;
  }
+ .note-item p {
+    margin-top: 5px;
+    margin-bottom: 2px;
+ }
+ #note-item-special {
+     background: rgb(211, 88, 88);
+ }
+ #note-item-specific {
+    margin: 10px;
+ }
+ .note-item-info {
+     padding: 1cm;
+     padding-top: 2px;
+     margin: 10px;
+     font-size: 14px;
+ }
+ .form-delete {
+     display: flex;
+     justify-content: flex-end;
+     flex-direction: column;
+     background: dodgerblue !important;
+     border-radius: 5px;
+ }
+ #content_note {
+     display: flex;
+     justify-content: center;
+ }
+ textarea {
+     background: whitesmoke;
+     border-radius: 5px;
+ }
+ .form input {
+     margin: -20px;
+ }
+ #content_note {
+    width: 258px;
+    height: 54px;
+    margin: 0px;
+ }
+ #header-note {
+     padding: 30px;
+ }

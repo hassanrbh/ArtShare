@@ -23,5 +23,6 @@ class Track < ApplicationRecord
     }
 
     belongs_to :album, :class_name => 'Album', :dependent => :destroy
+    has_many :notes, :class_name => 'Note'
 end
 

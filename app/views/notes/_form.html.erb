@@ -1,0 +1,19 @@
+<% if flash[:success] %>
+      <% flash[:success].each do |error| %>
+          <li id="success-catching"><%= error %></li>
+      <% end %>
+<% end %>
+<% if flash[:error_me] %>
+      <% flash[:error_me].each do |error| %>
+          <li id="error-catching"><%= error %></li>
+      <% end %>
+<% end %>
+<form class="form" action="<%= notes_url %>" method="post">
+    <%= auth_token %>
+    <input type="hidden" name="notes[track_id]" value="<%= @track.id %>">
+    
+    <label for="content_note">Content: </label>
+    <textarea id="content_note" name="notes[longnote]"></textarea>
+
+    <input type="submit" value="Create Note"/>
+</form>

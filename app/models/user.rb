@@ -18,6 +18,7 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 6, message: 'must be at least 6 characters'}
     after_initialize :ensure_session_token
 
+    has_many :tracks, :class_name => 'Track'
     # make the password encrypted and hash it with BCrypt
     def password=(password) # convert the current password to an encrypted version of it
         self.password_digest = BCrypt::Password.create(password)

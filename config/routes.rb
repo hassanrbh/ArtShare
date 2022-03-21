@@ -22,4 +22,6 @@ Rails.application.routes.draw do
     resources :tracks, only: :new
   end
 
+  # notes Table
+  resources :notes, only: [:destroy,:new, :create]
 end

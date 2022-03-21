@@ -1,0 +1,24 @@
+<div class="note-item">
+    <% @track.notes.each do |note| %>
+        <p id="note-item-specific"><s id="note-item-special">Message:  </s><%= note.longnote %></p>
+        <% if note.user.id == current_user.id %>
+            <div class="note-item-info">
+                <p>Authored by: <pre><%= note.user.email %></pre></p>
+                <form class="form-delete" action="<%= note_path(note.id) %>" method="POST">
+                    <%= auth_token %>
+                    <input type="hidden" name="_method" value="delete">
+
+                    <input type="submit" value="Destroy Note">
+                </form>
+            </div>
+        <% elsif %>
+            <% if note.id != current_user.id %>
+                <% render :plain => "hello", :status => 403%>
+            <% end %>
+        <% else %>
+            <div class="note-item-info">
+                <p>Authored by: <%= note.user.email %></p>
+            </div>
+        <% end %>
+    <% end %>
+</div>

@@ -247,6 +247,9 @@
      margin: 10px;
      font-size: 14px;
  }
+ .list-album {
+     padding-bottom: 20px;
+ }
  .form-delete {
      display: flex;
      justify-content: flex-end;

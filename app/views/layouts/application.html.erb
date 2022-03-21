@@ -22,7 +22,7 @@
               <%= sign_in %>
               <%= sign_up %>
             <% else %>
-              <div class="header-list">
+              <div class="header-list"> 
                 <p>Logged in as: <%= current_user.email %></p>
                 <form class="button_logout" action="<%= session_path %>" method="post">
                   <%= auth_token %>

@@ -11,14 +11,12 @@
                     <input type="submit" value="Destroy Note">
                 </form>
             </div>
-        <% elsif %>
-            <% if note.id != current_user.id %>
-                <% render :plain => "hello", :status => 403%>
-            <% end %>
         <% else %>
-            <div class="note-item-info">
-                <p>Authored by: <%= note.user.email %></p>
-            </div>
+            <% if note.id != current_user.id %>
+                <div class="note-item-info">
+                    <p>Authored by: <%= note.user.email %></p>
+                </div>
+            <% end %>
         <% end %>
     <% end %>
 </div>

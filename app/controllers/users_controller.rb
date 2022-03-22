@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
     before_action :already_logged_in?, only: %i[new create]
+    def index
+        @users = User.all
+        render :index
+    end
     def new
         render :new
     end
@@ -23,6 +27,13 @@ class UsersController < ApplicationController
         # show the user inforamtionally
         @user_finder = User.find_by(:id => params[:id])
         render :show
+    end
+
+    def destroy
+        user = User.find_by(:id => params[:id])
+        user.destroy
+        flash[:success] = ["Deleted Successfully"]
+        redirect_to users_path
     end
 
     def activate

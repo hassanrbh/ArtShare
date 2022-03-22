@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "/signout", to: "sessions#destroy" 
 
   resource :session, :only => [:new,:create,:destroy]
-  resources :users, :only => [:new,:create,:show] do 
+  resources :users, :only => [:index,:new,:create,:show,:destroy] do 
     collection do 
       get "activate"
     end

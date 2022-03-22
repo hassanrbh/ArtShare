@@ -1,0 +1,17 @@
+<h1 id="admin-panel-title">Admin Panel</h1>
+
+<% if flash[:success] %>
+    <% flash[:success].each do |success| %>
+        <li id="success-catching"><%= success %></li>
+    <% end %>
+<% end %>
+<ul class="users">    
+    <% @users.each do |user| %>
+        <li style="padding-bottom: 10px;">User: <strong><%= user.email %></strong></li>
+        <form style="padding-bottom: 10px;" action="<%= user_path(user.id) %>" method="post">
+            <% auth_token %>
+            <input type="hidden" name="_method" value="delete"/>
+            <input type="submit" value="Delete User"/>
+        </form> 
+    <% end %>
+</ul>

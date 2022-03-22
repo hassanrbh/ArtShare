@@ -279,3 +279,8 @@
     color: yellow;
     list-style-type: none;
  }
+ #admin-panel-title {
+     font-size: 30px;
+     color: red;
+     padding-bottom: 15px;
+ }

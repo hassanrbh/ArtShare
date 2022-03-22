@@ -35,6 +35,12 @@ class ApplicationController < ActionController::Base
             redirect_to root_url
         end
     end
+    def admin_panel?
+        if current_user.admin != true
+            flash[:errors] = ["This is A Hidden Panel, Where Are you Goinng ❌ 🚷"]
+            redirect_to root_url
+        end
+    end
     def check_if_user_activated(user)
         if user.activated == false
             flash[:errors] = ["#{user.email} Make Sure You Activate Your Account"]

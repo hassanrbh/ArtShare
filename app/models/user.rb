@@ -10,6 +10,7 @@
 #  updated_at       :datetime         not null
 #  activated        :boolean          default(FALSE)
 #  activation_token :text
+#  admin            :boolean          default(FALSE)
 #
 class User < ApplicationRecord
     attr_reader :password

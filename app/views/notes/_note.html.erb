@@ -1,7 +1,7 @@
 <div class="note-item">
     <% @track.notes.each do |note| %>
         <p id="note-item-specific"><s id="note-item-special">Message:  </s><%= note.longnote %></p>
-        <% if note.user.id == current_user.id %>
+        <% if note.user.id == current_user.id || current_user.admin == true %>
             <div class="note-item-info">
                 <p>Authored by: <pre><%= note.user.email %></pre></p>
                 <form class="form-delete" action="<%= note_path(note.id) %>" method="POST">

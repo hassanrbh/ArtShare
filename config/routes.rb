@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  default_url_options :host => "localhost:1331"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -10,7 +11,11 @@ Rails.application.routes.draw do
   get "/signout", to: "sessions#destroy" 
 
   resource :session, :only => [:new,:create,:destroy]
-  resources :users, :only => [:new,:create,:show]
+  resources :users, :only => [:new,:create,:show] do 
+    collection do 
+      get "activate"
+    end
+  end
   # albums and bands table
   resources :bands do
     resources :albums, :only => :new

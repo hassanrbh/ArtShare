@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    before_action :require_login!
     def new
         render :new
     end
@@ -7,10 +6,14 @@ class UsersController < ApplicationController
         # sign up a user and create a record in the db
         @new_user = User.new(users_params)
         if @new_user.save
-            log_in_user!(@new_user)
-            redirect_to bands_path, notice: ['You have successfully registered']
+            check_if_user_activated_registration(@new_user)
+            # Welcome Message To The User
+            messg = UserMailer.welcome_email(@new_user)
+            messg.deliver
+            # Send A confirmation Email To The User
+            UserMailer.activate_account(@new_user).deliver_now!
         else
-            flash[:error] = @new_user.errors.full_messages
+            flash[:errors] = @new_user.errors.full_messages
             redirect_to new_user_path, error: @new_user.errors.full_messages
         end
     end
@@ -21,8 +24,19 @@ class UsersController < ApplicationController
         render :show
     end
 
+    def activate
+        # check if the user clicked the link in the email
+        activation_lookup = User.find_by(:activation_token => params[:activation_token])
+        if params[:activation_token] == activation_lookup.activation_token
+            activation_lookup.toggle(:activated)
+            activation_lookup.save!
+            log_in_user!(activation_lookup)
+            redirect_to root_url, :success => ["Thanks For Your Confirmations"]
+        end
+    end
+
     private
     def users_params
-        params.require(:users).permit(:email,:password, :session_token)
+        params.require(:users).permit(:email,:password, :session_token, :activation_token)
     end
 end

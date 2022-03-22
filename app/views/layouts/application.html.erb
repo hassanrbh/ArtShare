@@ -37,8 +37,8 @@
         </nav> 
       </header>
     </div>
-    <% if flash[:error] %>
-      <% flash[:error].each do |error| %>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
           <li id="error-catching"><%= error %></li>
       <% end %>
     <% end %>

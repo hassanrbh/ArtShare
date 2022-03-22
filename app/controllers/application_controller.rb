@@ -25,8 +25,26 @@ class ApplicationController < ActionController::Base
     private
     def require_login!
         if current_user.nil?
-            flash[:error] = ["You must be logged in to continue"]
+            flash[:errors] = ["You must be logged in to continue"]
             redirect_to signin_path
+        end
+    end
+    def check_if_user_activated(user)
+        if user.activated == false
+            flash[:errors] = ["#{user.email} Make Sure You Activate Your Account"]
+            redirect_to signin_path
+        else
+            log_in_user!(user)
+            redirect_to bands_path, :success => ["Welcome Again #{user.email}"]
+        end
+    end
+    def check_if_user_activated_registration(user)
+        if user.activated == false
+            flash[:errors] = ['Successfully created your account! Check your inbox for an activation email.']
+            redirect_to signin_path
+        else
+            log_in_user!(@new_user)
+            redirect_to bands_path, success: ['Thanks For Your Confirmation']
         end
     end
 end

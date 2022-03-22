@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :already_logged_in?, only: %i[new create]
     def new
         render :new
     end

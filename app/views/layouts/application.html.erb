@@ -37,11 +37,7 @@
         </nav> 
       </header>
     </div>
-    <% if flash[:errors] %>
-      <% flash[:errors].each do |error| %>
-          <li id="error-catching"><%= error %></li>
-      <% end %>
-    <% end %>
+    <%= render "layouts/errors" %>
     <%= yield %>
   </body>
 </html>

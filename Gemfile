@@ -52,7 +52,6 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
-gem "letter_opener", group: :development
 
 
 group :development do
@@ -64,6 +63,7 @@ group :development do
   gem "bcrypt"
   gem "rubocop"
   gem "query_diet"
+  gem "mailcatcher"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 

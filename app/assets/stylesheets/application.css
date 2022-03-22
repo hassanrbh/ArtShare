@@ -276,3 +276,7 @@
  #header-note {
      padding: 30px;
  }
+ #notice-catching {
+    color: yellow;
+    list-style-type: none;
+ }

@@ -29,6 +29,12 @@ class ApplicationController < ActionController::Base
             redirect_to signin_path
         end
     end
+    def already_logged_in?
+        if !current_user.nil?
+            flash[:errors] = ["You already logged In ! 🧨🗡"]
+            redirect_to root_url
+        end
+    end
     def check_if_user_activated(user)
         if user.activated == false
             flash[:errors] = ["#{user.email} Make Sure You Activate Your Account"]

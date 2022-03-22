@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+    before_action :already_logged_in?, only: [:create, :new]
     def new
         @new_user = User.new
         render :new
@@ -19,7 +20,7 @@ class SessionsController < ApplicationController
     end
     def destroy
         logout!
-        flash[:notice] = ["You have been logged out"]
+        flash[:notice] = ["You have been logged out 🔪 💣"]
         redirect_to new_session_path
     end
 end

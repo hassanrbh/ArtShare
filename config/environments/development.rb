@@ -62,9 +62,11 @@ Rails.application.configure do
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
-  # mailer
-  config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.perform_deliveries = true
+  # Mailer Catcher
+  config.action_mailer.default_url_options = { host: 'localhost:8733' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { address: '127.0.0.1', port: 1025 }
+  config.action_mailer.raise_delivery_errors = false
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 

@@ -72,7 +72,7 @@ group :development do
 end
 
 group :production do
-
+  gem "bcrypt"
 end
 
 group :test do

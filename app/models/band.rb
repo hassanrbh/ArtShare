@@ -10,6 +10,7 @@
 class Band < ApplicationRecord
     validates :name, presence: true
 
+    has_many :tags, as: :tageable
     has_many :albums,
         class_name: 'Album',
         primary_key: :id,

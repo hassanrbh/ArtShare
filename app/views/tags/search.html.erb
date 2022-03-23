@@ -1,0 +1,13 @@
+<%= form_tag(search_path, :method => "get") do %>
+<div class="input-group">
+    <%= search_field_tag :search, params[:search], placeholder: "Enter query ", class: "form-control" %>
+    <div class="input-group-btn">
+        <%= button_tag "Search Music Me", :class => "search" ,:name => nil %>
+    </div>
+</div>
+<% end %>
+
+<h3 style="font-size: 30px;">Search Results </h3>
+<% @results.each do |result| %>
+    <%= result.tag %>
+<% end %>

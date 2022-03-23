@@ -24,6 +24,7 @@ class Album < ApplicationRecord
     }
     validates :year, presence: true
 
+    has_many :tags, as: :tageable
     belongs_to :band,
         class_name: 'Band',
         primary_key: :id,

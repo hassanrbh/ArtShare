@@ -29,4 +29,6 @@ Rails.application.routes.draw do
 
   # notes Table
   resources :notes, only: [:destroy,:new, :create]
+
+  # tags Table
 end

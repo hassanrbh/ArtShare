@@ -71,8 +71,8 @@ group :development do
   # gem "spring"
 end
 
-group :production do 
-  gem "bcrypt"
+group :production do
+
 end
 
 group :test do

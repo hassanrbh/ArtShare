@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: bands
@@ -8,16 +10,16 @@
 #  updated_at :datetime         not null
 #
 class Band < ApplicationRecord
-    validates :name, presence: true
+  validates :name, presence: true
 
-    has_many :tags, as: :tageable
-    has_many :albums,
-        class_name: 'Album',
-        primary_key: :id,
-        foreign_key: :band_id,
-        dependent: :destroy
+  has_many :tags, as: :tageable
+  has_many :albums,
+           class_name: 'Album',
+           primary_key: :id,
+           foreign_key: :band_id,
+           dependent: :destroy
 
-    def band_albums
-        self.albums
-    end
+  def band_albums
+    albums
+  end
 end

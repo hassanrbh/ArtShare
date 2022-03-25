@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: tags
@@ -10,6 +12,6 @@
 #  updated_at    :datetime         not null
 #
 class Tag < ApplicationRecord
-    validates :tag, :presence => true
-    belongs_to :tageable, :polymorphic => true
+  validates :tag, presence: true
+  belongs_to :tageable, polymorphic: true
 end

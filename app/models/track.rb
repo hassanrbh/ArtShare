@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: tracks
@@ -12,26 +14,25 @@
 #  updated_at :datetime         not null
 #
 class Track < ApplicationRecord
-    TRACK_TYPES = %w(regular bonus) 
+  TRACK_TYPES = %w[regular bonus].freeze
 
-    validates :lyrics, presence: true
-    validates :album_id, presence: true
-    validates :title, presence: true
-    validates :ord, presence: true
-    validates :track_type, presence: true, inclusion: {
-        in: TRACK_TYPES,
-        message: 'Track Type must be in the list'
-    }
+  validates :lyrics, presence: true
+  validates :album_id, presence: true
+  validates :title, presence: true
+  validates :ord, presence: true
+  validates :track_type, presence: true, inclusion: {
+    in: TRACK_TYPES,
+    message: 'Track Type must be in the list'
+  }
 
-    has_many :tags, as: :tageable
-    belongs_to :album, :class_name => 'Album', :dependent => :destroy
-    has_many :notes, :class_name => 'Note'
+  has_many :tags, as: :tageable
+  belongs_to :album, class_name: 'Album', dependent: :destroy
+  has_many :notes, class_name: 'Note'
 
-    def get_breaker_lyrics
-        break_lyrics = self.lyrics.split("\n")
-        break_lyrics.each do |string_lyric|
-            string_lyric
-        end
+  def get_breaker_lyrics
+    break_lyrics = lyrics.split("\n")
+    break_lyrics.each do |string_lyric|
+      string_lyric
     end
+  end
 end
-

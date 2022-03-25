@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class BandsControllerTest < ActionDispatch::IntegrationTest
+class AdminTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

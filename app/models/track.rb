@@ -12,6 +12,7 @@
 #  track_type :string           default("regular"), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 class Track < ApplicationRecord
   TRACK_TYPES = %w[regular bonus].freeze
@@ -24,6 +25,7 @@ class Track < ApplicationRecord
     in: TRACK_TYPES,
     message: 'Track Type must be in the list'
   }
+  validates :user_id, presence: true
 
   has_many :tags, as: :tageable
   belongs_to :album, class_name: 'Album', dependent: :destroy

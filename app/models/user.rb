@@ -23,8 +23,8 @@ class User < ApplicationRecord
   validates :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, message: 'must be at least 6 characters', allow_nil: true }
-  after_initialize :ensure_session_token
-  after_initialize :ensure_activation_token
+  before_validation :ensure_session_token
+  before_validation :ensure_activation_token
 
   has_many :tracks, class_name: 'Track'
   # make the password encrypted and hash it with BCrypt

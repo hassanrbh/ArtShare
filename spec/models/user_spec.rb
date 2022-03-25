@@ -15,7 +15,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject(:user_password) { User.new :email => "test@example.com", :password => "localhost" }
+
+  # subject(:user_password) { User.new :email => "test@example.com", :password => "localhost" }
+  subject(:user) { FactoryBot.build(:user) }
+
   describe "validations" do 
     it "should validates the presence of password digest" do 
       user_1 = User.new :password => "password"
@@ -34,6 +37,16 @@ RSpec.describe User, type: :model do
       user = User.new :password => "test"
       user.save
       expect(user.errors[:password]).to eq(["must be at least 6 characters"])
+    end
+    it "should if activated is always false " do 
+      user = FactoryBot.build(:user)
+      expect(user.activated).to be false
+    end
+  end
+  describe "admins" do 
+    it "should return true if the user is admin " do
+      admin = FactoryBot.build(:admin)
+      expect(admin.admin).to eq true
     end
   end
   describe "associations" do

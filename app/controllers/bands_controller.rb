@@ -15,7 +15,7 @@ class BandsController < ApplicationController
   def create
     @band = Band.new(bands_params)
 
-    if @band.save!
+    if @band.save
       flash[:success] = 'The band was successfully created'
       redirect_to band_path(@band)
     else
@@ -26,7 +26,11 @@ class BandsController < ApplicationController
 
   def show
     @band = Band.find_by(id: params[:id])
-    render :show
+    if @band.present?
+      render :show
+    else
+      redirect_to bands_path
+    end 
   end
 
   def edit

@@ -92,3 +92,9 @@ RSpec.configure do |config|
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
 end
+def login_user!(email,password)
+  visit "/signin"
+  fill_in "email", :with => email
+  fill_in "password", :with => password
+  click_button "Envoye"
+end

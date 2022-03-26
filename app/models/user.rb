@@ -53,6 +53,9 @@ class User < ApplicationRecord
     session_token
   end
 
+  def self.find_admin
+    User.where(:admin => true)
+  end
   # Check if the user in the db
 
   def self.find_by_credentials!(email, password)

@@ -16,11 +16,11 @@ RSpec.describe "Bands", type: :request do
         expect(response.status).to eq(302)
         expect(response).to redirect_to "/signin"
       end
-    context "if the band is not found" do
-      it "it not success" do 
-        get "/bands/1"
-          expect(response.status).to eq(302)
+      context "if the band is not found" do
+        it "it not success" do 
+          get "/bands/1"
           expect(response).to redirect_to "/bands"
+          expect(response.status).to eq(302)
       end
     end
   end

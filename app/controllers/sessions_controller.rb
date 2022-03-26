@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       check_if_user_activated(user)
     else
       flash[:errors] = ['credentials failed, Try Again ! 🔫 🚓']
-      redirect_to new_session_path
+      redirect_to signin_path
     end
   end
 

@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :track do
     title { Faker::Music.album }
-    ord {  5 }
+    ord { Faker::Number.digit }
     lyrics { Faker::Music.instrument }
     album_id { 5 }
   end

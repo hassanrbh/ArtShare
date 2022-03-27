@@ -41,6 +41,7 @@ RSpec.describe User, type: :model do
     it "should if activated is always false " do 
       user = FactoryBot.build(:user)
       expect(user.activated).to be false
+      expect(user).to_not be_valid
     end
   end
   describe "admins" do 

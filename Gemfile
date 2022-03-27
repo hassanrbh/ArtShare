@@ -58,18 +58,21 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rails-controller-testing'
+  gem "spring"
+  gem 'rspec-rails'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'annotate'
-  gem 'bcrypt'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'mailcatcher'
   gem 'query_diet'
   gem 'rubocop'
   gem 'web-console'
+  gem 'spring-commands-rspec'
+  gem 'guard-rspec'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -86,7 +89,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'launchy'
-  gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'webdrivers'

@@ -30,6 +30,7 @@ class Track < ApplicationRecord
   has_many :tags, as: :tageable
   belongs_to :album, class_name: 'Album', dependent: :destroy
   has_many :notes, class_name: 'Note'
+  belongs_to :user
 
   def get_breaker_lyrics
     break_lyrics = lyrics.split("\n")

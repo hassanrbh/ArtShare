@@ -38,11 +38,6 @@ RSpec.describe User, type: :model do
       user.save
       expect(user.errors[:password]).to eq(["must be at least 6 characters"])
     end
-    it "should if activated is always false " do 
-      user = FactoryBot.build(:user)
-      expect(user.activated).to be false
-      expect(user).to_not be_valid
-    end
   end
   describe "admins" do 
     it "should return true if the user is admin " do

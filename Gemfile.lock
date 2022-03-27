@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/indocomsoft/shoulda-matchers.git
+  revision: 441df0585399c6dffdaffec01a7fb0842a5a5c0f
+  ref: 441df05
+  specs:
+    shoulda-matchers (4.0.0.rc1)
+      activesupport (>= 4.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -296,8 +304,6 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     shellany (0.0.1)
-    shoulda-matchers (5.1.0)
-      activesupport (>= 5.2.0)
     sinatra (2.2.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -380,7 +386,7 @@ DEPENDENCIES
   rspec-rails
   rubocop
   selenium-webdriver
-  shoulda-matchers (~> 5.0)
+  shoulda-matchers!
   spring
   spring-commands-rspec
   sprockets-rails

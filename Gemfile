@@ -90,6 +90,6 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers', '~> 5.0'
+  gem 'shoulda-matchers', github: 'indocomsoft/shoulda-matchers', ref: '441df05'
   gem 'webdrivers'
 end

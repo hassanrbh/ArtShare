@@ -27,6 +27,7 @@ class User < ApplicationRecord
   before_validation :ensure_activation_token
 
   has_many :tracks, class_name: 'Track'
+  has_many :likes
   # make the password encrypted and hash it with BCrypt
   # convert the current password to an encrypted version of it
   def password=(password)

@@ -18,4 +18,6 @@ class Note < ApplicationRecord
 
   belongs_to :user, class_name: 'User'
   belongs_to :track, class_name: 'Track'
+  has_many :likes
+
 end

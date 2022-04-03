@@ -31,5 +31,6 @@ Rails.application.routes.draw do
   # notes Table
   resources :notes, only: %i[destroy new create]
 
-  # tags Table
+  # likes Table
+  resources :likes, :only => [:create, :destroy]
 end

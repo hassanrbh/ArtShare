@@ -1,0 +1,48 @@
+/*
+Error: Invalid CSS after "0": expected expression (e.g. 1px, bold), was ";"
+        on line 1 of app/assets/stylesheets/home.sass
+
+1: $spacing: 0;
+2: $primary_color: red;
+3: // sass is written without brackets and it use indention
+4: 
+5: body
+6:   font: 100%
+
+Backtrace:
+app/assets/stylesheets/home.sass:1
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/script/lexer.rb:240:in `expected!'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/script/parser.rb:897:in `assert_done'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/script/parser.rb:69:in `parse'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/script/parser.rb:228:in `parse'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/script.rb:27:in `parse'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/engine.rb:1169:in `parse_script'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/engine.rb:779:in `parse_variable'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/engine.rb:650:in `parse_line'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/engine.rb:539:in `build_tree'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/engine.rb:558:in `block in append_children'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/engine.rb:557:in `each'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/engine.rb:557:in `append_children'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/engine.rb:417:in `_to_tree'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:320:in `block in watch'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+/Users/mac/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"0\": expected expression (e.g. 1px, bold), was \";\"\A         on line 1 of app/assets/stylesheets/home.sass\A \A 1: $spacing: 0;\A 2: $primary_color: red;\A 3: // sass is written without brackets and it use indention\A 4: \A 5: body\A 6:   font: 100%"; }

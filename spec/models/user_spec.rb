@@ -72,5 +72,37 @@ RSpec.describe User, type: :model do
         expect(user.activation_token).to be nil
       end
     end
+    context "#is_password!" do
+      it "when the password is right " do 
+        password = Faker::Internet.password
+        user = FactoryBot.build(:user,password: password)
+
+        expect(user.is_password!(password)).to be true
+      end
+      it "when the password is wrong " do
+        password = Faker::Internet.password
+        user = FactoryBot.build(:user,password: password)
+
+        expect(user.is_password!('testing')).to be false
+      end 
+    end
+    context "#reset_session_token!" do
+      it "reset the session_token for the current user" do
+        user = FactoryBot.build(:user)
+        user.valid?
+        user_session_token = user.session_token
+        user.reset_session_token!
+        expect(user.session_token).not_to be user_session_token
+      end
+    end
+    context "#find_by_credentials!" do
+      it "should find the user by its credentials" do
+        user = FactoryBot.create(:user)
+        expect(User.find_by_credentials!(user.email,user.password)).to be_truthy
+      end
+      it "shoudl return nil if the user does not exist" do
+        expect(User.find_by_credentials!("test@test.com","password")).to be_nil
+      end
+    end
   end
 end

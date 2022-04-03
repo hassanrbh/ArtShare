@@ -62,7 +62,7 @@ class ApplicationController < ActionController::Base
     if user.activated == false
       flash[:errors] = ['Successfully created your account! Check your inbox for an activation email.']
       redirect_to signin_path
-    else
+    else user.activated == true
       log_in_user!(@new_user)
       redirect_to bands_path, success: ['Thanks For Your Confirmation']
     end

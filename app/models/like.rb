@@ -10,8 +10,7 @@
 #
 class Like < ApplicationRecord
     validates :user_id, uniqueness: {
-        scope: :note_id,
-        message: 'You cannot Like at the moment'
+        scope: :note_id
     }
     belongs_to :user
     belongs_to :note    

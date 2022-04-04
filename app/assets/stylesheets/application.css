@@ -285,12 +285,12 @@
  .input-group-btn {
      margin-top: 10px;
  }
- /* @media only screen and (min-width: 400px) {
+ @media only screen and (min-width: 400px) {
      body {
          background-color: #6e6c6c;
      }
- } */
- /* @media only screen and (min-width: 800px) {
+ } 
+ @media only screen and (min-width: 800px) {
      body {
          background-color: lavender;
      }
@@ -302,7 +302,7 @@
      body {
          background-color: lightseagreen;
      }
- } */
+ }
  @media screen and (min-width: 500px) {
      body {
          background-color: lightslategray;

@@ -15,7 +15,7 @@
       <header class="header">
         <nav class="header-nav">
           <h1 class="header-logo">
-              <a href="<%= bands_path %>">Music Me</a>
+              <a href="<%= root_path %>">Music Me</a>
           </h1>
           <ul class="header-list">
             <% if current_user.nil? %>
@@ -37,6 +37,7 @@
         </nav> 
       </header>
     </div>
+    <%= render "layouts/errors" %>
     <%= yield %>
   </body>
 </html>

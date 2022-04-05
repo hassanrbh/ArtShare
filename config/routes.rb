@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
 
   # Sessions And Users Configuration::
-  root 'bands#index'
+  # root 'bands#index'
+  root 'static_pages#home'
   get '/signin', to: 'sessions#new'
   get '/signup', to: 'users#new'
   get '/signout', to: 'sessions#destroy'

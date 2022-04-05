@@ -3,13 +3,13 @@
         <p id="note-item-specific"><s id="note-item-special">Message:  </s><%= note.longnote %></p>
         <% if note.user.id == current_user.id || current_user.admin == true %>
             <div class="note-item-info">
-                <p><%= note.likes.count %> LIKES</p>
                 <% if current_user.likes.find_by(:note => note).nil? %>
                     <form id="likes_form" action="/likes" method="post">
                         <%= auth_token %>
                         <input type="hidden" name="like[note_id]" value="<%= note.id %>">
                         <input type="submit" value="Like">
                     </form>
+                    <p class="like" ><%= note.likes.count %></p>
                 <% else %>
                     <% like = current_user.likes.find_by(:note => note) %>
                     <form id="likes_form" action="<%= like_path(like) %>" method="post">
@@ -17,6 +17,7 @@
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="submit" value="Unlike">
                     </form>
+                    <p class="uplike" ><%= note.likes.count %></p>
                 <% end %>
                 <p>Authored by: <pre><%= note.user.email %></pre></p>
                 <form class="form-delete" action="<%= note_path(note.id) %>" method="POST">

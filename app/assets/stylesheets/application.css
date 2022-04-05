@@ -285,7 +285,7 @@
  .input-group-btn {
      margin-top: 10px;
  }
- @media only screen and (min-width: 400px) {
+ /* @media only screen and (min-width: 400px) {
      body {
          background-color: #6e6c6c;
      }
@@ -298,18 +298,14 @@
          background-color: lightslategray;
      }
  }
- @media only screen and (min-height: 700px) {
-     body {
-         background-color: lightseagreen;
-     }
- }
- @media screen and (min-width: 500px) {
-     body {
-         background-color: lightslategray;
-     }
- }
  @media screen and (max-width: 690px) {
      body {
          background-color: lightgreen;
      }
+ } */
+ .like:after {
+     content: " 👍";
+ }
+ .uplike:after {
+     content: " 👎";
  }

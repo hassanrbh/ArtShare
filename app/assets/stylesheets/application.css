@@ -309,7 +309,7 @@
  .header-logo {
     padding-right: 90px;
  }
- .header-logo:hover {
+ .header-logo > a:hover  {
      color: lightgoldenrodyellow;
      cursor: pointer;
      transition: color 1s;

@@ -1,5 +1,5 @@
-# frozen_string_literal: true
 
+# frozen_string_literal: true
 # == Schema Information
 #
 # Table name: admins
@@ -8,5 +8,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+
 class Admin < ApplicationRecord
 end

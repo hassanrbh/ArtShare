@@ -63,9 +63,6 @@
  .header-list form {
      padding-right: 10px;
  }
- .header-logo {
-     padding-right: 90px;
- }
  .wrapper {
      display: flex;
      justify-content: center;
@@ -308,4 +305,17 @@
  }
  .uplike:after {
      content: " 👎";
+ }
+ .header-logo {
+    padding-right: 90px;
+ }
+ .header-logo:hover {
+     color: lightgoldenrodyellow;
+     cursor: pointer;
+     transition: color 1s;
+     transition: transform 3s;
+     transform: rotate(-375deg);
+ }
+ .header-logo > a:after {
+    content: ' 👽';
  }

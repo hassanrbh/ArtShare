@@ -15,6 +15,8 @@
 #  admin            :boolean          default(FALSE)
 #
 class User < ApplicationRecord
+  include Taggable
+  
   attr_reader :password
 
   # validates :activated, :presence => true
@@ -28,6 +30,7 @@ class User < ApplicationRecord
 
   has_many :tracks, class_name: 'Track'
   has_many :likes
+
   # make the password encrypted and hash it with BCrypt
   # convert the current password to an encrypted version of it
   def password=(password)
